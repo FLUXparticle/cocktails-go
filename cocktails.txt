@@ -1,0 +1,393 @@
+Orange Velvet
+2cl:Barsirup Mandel
+2cl:Sahne
+8cl:Orangensaft
+8cl:Maracujanektar
+
+Mandarinetto
+2cl:Fruchtsirup Mandarine
+8cl:Kirschnektar
+8cl:Birnennektar
+
+Summerfeeling
+2cl:Fruchtsirup Preiselbeere
+8cl:Pfirsichnektar
+8cl:Ananassaft
+
+Green Banana
+2cl:Barsirup Blue Curacao
+2cl:Fruchtsirup Banane
+16cl:Orangensaft
+
+Strawberry Kiss
+2cl:Barsirup Erdbeere
+2cl:Sahne
+6cl:Maracujanektar
+6cl:Mangonektar
+6cl:Orangensaft
+
+Green Widow
+1cl:Fruchtsirup Banane
+2cl:Barsirup Blue Curacao
+16cl:Orangensaft
+
+Evening Sun
+2cl:Grenadine
+2cl:Sahne
+16cl:Bananennektar
+
+Highway Patrol
+2cl:Fruchtsirup Guave
+8cl:Ananassaft
+8cl:Orangensaft
+
+Andrea
+2cl:Barsirup Blue Curacao
+2cl:Barsirup Mandel
+2cl:Zitronensaft
+14cl:Orangensaft
+
+Summer Fun
+8cl:Preiselbeernektar
+6cl:Pfirsichnektar
+6cl:Ananassaft
+
+Florida Flip
+Eigelb
+2cl:Fruchtsirup Mango
+Grenadine
+10cl:Orangensaft
+
+Anitas Love
+4cl:Fruchtsirup Banane
+2cl:Sahne
+6cl:Ananassaft
+8cl:Maracujanektar
+
+Purpur Pineapple
+2cl:Fruchtsirup Ananas
+8cl:Kirschnektar
+8cl:Bananennektar
+
+Fiesta
+2cl:Barsirup Erdbeere
+2cl:Sahne
+8cl:Orangensaft
+8cl:Maracujanektar
+
+Tutti Frutti
+4cl:Fruchtsirup Maracuja
+6cl:Orangensaft
+6cl:Ananassaft
+2cl:Sahne
+
+Green Almond
+2cl:Barsirup Blue Curacao
+2cl:Barsirup Mandel
+8cl:Orangensaft
+8cl:Ananassaft
+
+Cinderella
+1cl:Grenadine
+2cl:Barsirup Kokos
+2cl:Sahne
+8cl:Orangensaft
+8cl:Ananassaft
+
+Rubino
+1cl:Grenadine
+10cl:Roter-Traubensaft
+10cl:Schwarzer-Johannisbeer-Nektar
+
+Pineapple Mix
+12cl:Ananassaft
+6cl:Preiselbeernektar
+Barsirup Mandel
+
+Strawberry Cup
+Erdbeeren
+1cl:Barsirup Erdbeere
+2cl:Barsirup Kokos
+2cl:Sahne
+15cl:Ananassaft
+
+Athletic
+2cl:Fruchtsirup Preiselbeere
+2cl:Sahne
+16cl:Roter-Traubensaft
+
+Bananen-Ananas-Milch
+2cl:Fruchtsirup Banane
+1cl:Fruchtsirup Kokos
+8cl:Ananassaft
+10cl:Milch
+
+Grenadine-Milk
+Vanilleeis
+2cl:Grenadine
+15cl:Milch
+
+Milkshake
+Erdbeeren
+Vanilleeis
+2cl:Barsirup Erdbeere
+15cl:Milch
+
+Coco-Cherry-Milk
+2cl:Fruchtsirup Kokos
+8cl:Milch
+12cl:Kirschnektar
+
+Jogging Mix
+2cl:Fruchtsirup Mandarine
+10cl:Roter-Traubensaft
+10cl:Milch
+
+Pink Power
+4cl:Fruchtsirup Preiselbeere
+15cl:Buttermilch
+
+Pick Me up
+10cl:Sangrita Classic
+10cl:Milch
+Eigelb
+Zitronensaft
+
+Green Lady
+4cl:Zitronensaft
+2cl:Barsirup Blue Curacao
+4cl:Barsirup Gin
+
+Flamingo
+2cl:Barsirup Kokos
+2cl:Barsirup Erdbeere
+8cl:Orangensaft
+8cl:Grapefruitsaft
+
+Red Fruits
+2cl:Grenadine
+6cl:Roter-Traubensaft
+6cl:Kirschnektar
+6cl:Preiselbeernektar
+
+Mint Cooler
+2cl:Barsirup Pfefferminze
+1cl:Zitronensaft
+8cl:Orangensaft
+8cl:Maracujanektar
+
+Virgin Mary
+Pfeffer
+Salz
+Tabasco
+Worcestershiresauce
+Zitronensaft
+20cl:Tomatensaft
+
+Moon Walker
+5cl:Preiselbeernektar
+5cl:Orangensaft
+5cl:Roter-Traubensaft
+5cl:Schwarzer-Johannisbeer-Nektar
+
+Golden Nugget
+2cl:Fruchtsirup
+2cl:Zitronensaft
+12cl:Maracujanektar
+
+Red Orchid
+2cl:Grenadine
+2cl:Fruchtsirup Limette
+1cl:Zitronensaft
+6cl:Grapefruitsaft
+10cl:Oragensaft
+
+Southside
+2cl:Barsirup Kokos
+2cl:Grenadine
+16cl:Grapefruitsaft
+
+Singapore Sling
+4cl:Barsirup Gin
+2cl:Barsirup Amarenakirsche
+4cl:Zitronensaft
+6cl:Ananassaft
+Sodawasser
+
+Californian
+2cl:Fruchtsirup Mango
+2cl:Fruchtsirup Limette
+8cl:Orangensaft
+8cl:Grapefruitsaft
+
+Cocomint
+2cl:Barsirup Kokos
+2cl:Barsirup Pfefferminz
+1cl:Zitronensaft
+8cl:Orangensaft
+8cl:Ananassaft
+
+Strawberry Daiquiri
+Erdbeermus
+3cl:Zitronensaft
+1cl:Barsirup Erdbeere
+4cl:Barsirup Rum
+
+Pussy Foot
+2cl:Grenadine
+6cl:Orangensaft
+6cl:Grapefruitsaft
+6cl:Ananassaft
+
+Baby Colada
+4cl:Fruchtsirup Kokos
+2cl:Sahne
+16cl:Ananassaft
+
+Blue Passion
+2cl:Barsirup Blue Curacao
+2cl:Fruchtsirup Maracuja
+16cl:Grapefruitsaft
+
+Planter's Punch
+1cl:Grenadine
+2cl:Zitronensaft
+6cl:Orangensaft
+6cl:Ananassaft
+4cl:Barsirup Rum
+
+Yellow Sun
+2cl:Fruchtsirup Maracuja
+6cl:Orangensaft
+6cl:Grapefruitsaft
+6cl:Bananennektar
+
+Speedy
+2cl:Barsirup Blue Curacao
+6cl:Maracujanektar
+6cl:Grapefruitsaft
+6cl:Bananennektar
+
+Pina Colada
+1cl:Barsirup Kokos
+2cl:Sahne
+12cl:Ananassaft
+4cl:Barsirup Rum
+
+Pink Planter
+4cl:Barsirup Rum
+5cl:Bananennektar
+5cl:Kirschnektar
+5cl:Grapefruitsaft
+
+Chiquita Punch
+2cl:Fruchtsirup Banane
+2cl:Grenadine
+2cl:Sahne
+14cl:Orangensaft
+
+Swimming Pool
+2cl:Barsirup Blue Curacao
+2cl:Barsirup Kokos
+2cl:Sahne
+14cl:Ananassaft
+
+Crazy Coconut
+2cl:Barsirup Kokos
+6cl:Maracujanektar
+6cl:Mangonektar
+6cl:Bananennektar
+
+Tropicana
+2cl:Fruchtsirup Limette
+2cl:Fruchtsirup Kokos
+8cl:Kirschnektar
+8cl:Bananennaktar
+
+Caribbean Fruitpunch
+2cl:Barsirup Blue Curacao
+2cl:Fruchtsirup Limette
+2cl:Zitronensaft
+6cl:Maracujanektar
+6cl:Ananassaft
+
+Yellow Fun
+2cl:Fruchtsirup Mango
+2cl:Zitronensaft
+8cl:Maracujanektar
+8cl:Pfirsichnektar
+
+Grenadine-Spritzer
+4cl:Grenadine
+Mineralwasser mit Kohlensäure
+
+Summer Collins
+3cl:Barsirup London Dry
+1cl:Barsirup Cranberry
+2cl:Zitronensaft
+4cl:Orangensaft
+10cl:Bitter Lemon
+
+Apricot Lady
+2cl:Fruchtsirup Aprikose
+8cl:Orangensaft
+10cl:Bitter Lemon
+
+Crenberry Cooler
+10cl:Preiselbeernektar
+5cl:Apfelsaft
+Zitronensaft
+Mineralwasser mit Kohlensäure
+
+Sparkling Mango
+2cl:Fruchtsirup Mango
+8cl:Maracujanektar
+12cl:Schweppes Bitter Orange
+
+Cool Strawberry
+2cl:Barsirup Erdbeere
+1cl:Zitronensaft
+8cl:Maracujanektar
+10cl:Bitter Lemon
+
+Kirsche Tonic
+2cl:Fruchtsirup Limette
+10cl:Kirschnektar
+Tonic Water
+
+Tom Collins
+4cl:Zitronensaft
+6cl:Barsirup Gin
+10cl:Sodawasser
+
+Summer Cooler
+2cl:Fruchtsirup Limette
+8cl:Kirschnektar
+Ginger Ale
+
+Red Angle
+2cl:Fruchtsirup Limette
+8cl:Roter-Traubensaft
+Bitter Lemon
+
+Limetten-Spritzer
+4cl:Fruchtsirup Limete
+Mineralwasser mit Kohlensäure
+
+Azzurro Notte
+2cl:Barsirup Mandel
+2cl:Barsirup Blue Curacao
+4cl:Zitronensaft
+Tonic Water
+
+Pink Dream
+2cl:Fruchtsirup Preiselbeere
+8cl:Orangensaft
+10cl:BitterLemon
+
+Yellow Boxer
+2cl:Fruchtsirup Manderine
+2cl:Zitronensaft
+10cl:Orangensaft
+10cl:Tonic Water
+
