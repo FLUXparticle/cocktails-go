@@ -1,7 +1,7 @@
 package repository
 
 type Cocktail struct {
-	CocktailID   uint `gorm:"primaryKey"`
-	Name         string
-	Instructions []*Instruction `gorm:"foreignKey:CocktailID"`
+	CocktailID   uint           `gorm:"primaryKey" json:"id"`
+	Name         string         `json:"name"`
+	Instructions []*Instruction `gorm:"foreignKey:CocktailID" json:"instructions,omitempty"`
 }
