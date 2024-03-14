@@ -1,0 +1,7 @@
+<h3>Einkaufsliste</h3>
+
+<ul>
+    <li ng-repeat="ingredient in ingredients">
+        <a ng-href="#/ingredients/{{ingredient.id}}" ng-bind="ingredient.name"></a>
+    </li>
+</ul>

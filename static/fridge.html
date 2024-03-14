@@ -1,0 +1,15 @@
+<h3>Im Kühlschrank</h3>
+<ul>
+    <li ng-repeat="ingredient in inFridge">
+        <button ng-click="removeFromFridge(ingredient.id)">-</button>
+        <a ng-href="#/ingredients/{{ingredient.id}}">{{ingredient.name}}</a>
+    </li>
+</ul>
+
+<h3>Nicht im Kühlschrank</h3>
+<ul>
+    <li ng-repeat="ingredient in notInFridge">
+        <button ng-click="addToFridge(ingredient.id)">+</button>
+        <a ng-href="#/ingredients/{{ingredient.id}}">{{ingredient.name}}</a>
+    </li>
+</ul>
