@@ -1,0 +1,7 @@
+<h3>{{ cocktail.name }}</h3>
+
+<ul>
+    <li ng-repeat="instruction in cocktail.instructions">
+        {{ instruction.amount }} <a ng-href="#/ingredients/{{ instruction.ingredient.id }}">{{ instruction.ingredient.name }}</a>
+    </li>
+</ul>
