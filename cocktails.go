@@ -5,6 +5,12 @@ import (
 	"cocktails-go/repository"
 	"cocktails-go/service"
 	"context"
+	"net"
+	"net/http"
+	"os"
+	"strings"
+	"time"
+
 	ginzap "github.com/gin-contrib/zap"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/fx"
@@ -12,11 +18,6 @@ import (
 	"go.uber.org/zap"
 	"gorm.io/gorm/logger"
 	"moul.io/zapgorm2"
-	"net"
-	"net/http"
-	"os"
-	"strings"
-	"time"
 )
 
 func StaticFileServer(c *gin.Context) {
@@ -32,7 +33,7 @@ func StaticFileServer(c *gin.Context) {
 	}
 }
 
-func NewGinHandler(cocktailsHandler *handler.CocktailHandler, fridgeHandler *handler.FridgeHandler, log *zap.Logger) http.Handler {
+func NewGinHandler(cocktailsHandler *handler.CocktailHandler, fridgeHandler *handler.FridgeHandler, ratingHandler *handler.RatingHandler, log *zap.Logger) http.Handler {
 	gin.SetMode(gin.ReleaseMode)
 
 	r := gin.New()
@@ -53,6 +54,11 @@ func NewGinHandler(cocktailsHandler *handler.CocktailHandler, fridgeHandler *han
 	r.PATCH("/api/user/fridge/:ingredientId", fridgeHandler.UpdateFridgeIngredient)
 	r.GET("/api/user/possible", fridgeHandler.PossibleRecipes)
 	r.GET("/api/user/shopping", fridgeHandler.ShoppingList)
+
+	// Bewertungen schreiben und als Historie oder Live-Feed abrufen.
+	r.POST("/api/cocktails/:id/ratings", ratingHandler.Create)
+	r.GET("/api/ratings", ratingHandler.List)
+	r.GET("/api/ratings/stream", ratingHandler.Stream)
 
 	return r
 }
@@ -109,6 +115,9 @@ func main() {
 			repository.NewCocktailRepository,
 			repository.NewIngredientRepository,
 			repository.NewDatabase,
+			// MongoDB und HTTP-Handler für die Bewertungen.
+			repository.NewRatingRepository,
+			handler.NewRatingHandler,
 		),
 		fx.Invoke(func(*http.Server) {}),
 	).Run()

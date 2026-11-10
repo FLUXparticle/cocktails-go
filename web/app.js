@@ -41,6 +41,11 @@ app.config(function($routeProvider) {
             templateUrl: 'shopping.html',
             controller: 'ShoppingController'
         })
+        // Eigene Ansicht für den Live-Feed, die parallel zur Detailseite geöffnet werden kann.
+        .when('/feed', {
+            templateUrl: 'rating-feed.html',
+            controller: 'RatingFeedController'
+        })
         .otherwise({
             redirectTo: '/'
         });
@@ -58,6 +63,24 @@ app.controller('CocktailDetailController', function($scope, $routeParams, $http)
         .then(function(response) {
             $scope.cocktail = response.data;
         });
+
+    // Eine Bewertung abschicken und das Formular erst nach Erfolg zurücksetzen.
+    $scope.rating = {};
+    $scope.submitRating = function() {
+        $scope.savingRating = true;
+        $scope.ratingMessage = '';
+        $http.post('/api/cocktails/' + $routeParams.id + '/ratings', $scope.rating)
+            .then(function() {
+                $scope.rating = {};
+                $scope.ratingMessage = 'Bewertung gespeichert.';
+            }, function(response) {
+                $scope.ratingMessage = (response.data && response.data.error) ||
+                    'Bewertung konnte nicht gespeichert werden.';
+            })
+            .finally(function() {
+                $scope.savingRating = false;
+            });
+    };
 });
 
 app.controller('IngredientListController', function($scope, $http) {
@@ -143,4 +166,61 @@ app.controller('ShoppingController', function($scope, $http) {
         .then(function(response) {
             $scope.ingredients = response.data;
         });
+});
+
+
+// Der Feed kombiniert die gespeicherte Historie mit neuen Einträgen aus MongoDB.
+app.controller('RatingFeedController', function($scope, $http) {
+    $scope.ratings = [];
+    $scope.feedStatus = 'Live-Verbindung wird aufgebaut …';
+
+    // Einträge können gleichzeitig über die Historie und den Stream ankommen.
+    function mergeRatings(incoming) {
+        var byId = new Map();
+        $scope.ratings.concat(incoming).forEach(function(rating) {
+            byId.set(rating.id, rating);
+        });
+        $scope.ratings = Array.from(byId.values()).sort(function(a, b) {
+            return Date.parse(b.createdAt) - Date.parse(a.createdAt) ||
+                b.id.localeCompare(a.id);
+        }).slice(0, 20);
+    }
+
+    var stream = new EventSource('/api/ratings/stream');
+
+    function loadHistory() {
+        $http.get('/api/ratings').then(function(response) {
+            mergeRatings(response.data);
+            $scope.historyError = '';
+        }, function() {
+            $scope.historyError = 'Bewertungen konnten nicht geladen werden.';
+        });
+    }
+
+    // Nach dem Start und jeder Wiederverbindung schließt die Historie mögliche Lücken.
+    stream.addEventListener('ready', function() {
+        loadHistory();
+        $scope.$evalAsync(function() {
+            $scope.feedStatus = 'Live verbunden';
+        });
+    });
+    stream.addEventListener('rating', function(event) {
+        var rating = JSON.parse(event.data);
+        // EventSource läuft außerhalb von AngularJS.
+        $scope.$evalAsync(function() {
+            mergeRatings([rating]);
+        });
+    });
+    stream.onerror = function() {
+        $scope.$evalAsync(function() {
+            $scope.feedStatus = 'Live-Verbindung unterbrochen.';
+        });
+        // Die Historie bleibt auch bei einem ausgefallenen Stream zugänglich.
+        loadHistory();
+    };
+
+    // Beim Wechsel der Route soll der Browser die Verbindung schließen.
+    $scope.$on('$destroy', function() {
+        stream.close();
+    });
 });

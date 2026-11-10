@@ -5,3 +5,19 @@
         {{ instruction.amount }} <a ng-href="#/ingredients/{{ instruction.ingredient.id }}">{{ instruction.ingredient.name }}</a>
     </li>
 </ul>
+
+<!-- Bewertungen werden für den aktuell angezeigten Cocktail gespeichert. -->
+<section ng-show="cocktail.id">
+    <h4>Cocktail bewerten</h4>
+    <form name="ratingForm" ng-submit="submitRating()">
+        <label for="rating-stars">Sterne</label>
+        <select id="rating-stars" ng-model="rating.stars"
+                ng-options="stars for stars in [1, 2, 3, 4, 5]" required>
+            <option value="">Bitte auswählen</option>
+        </select>
+        <label for="rating-comment">Kommentar (optional)</label>
+        <textarea id="rating-comment" ng-model="rating.comment" maxlength="500"></textarea>
+        <button type="submit" ng-disabled="ratingForm.$invalid || savingRating">Bewertung speichern</button>
+    </form>
+    <p role="status">{{ ratingMessage }}</p>
+</section>

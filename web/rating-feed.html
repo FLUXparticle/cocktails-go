@@ -1,0 +1,16 @@
+<h3>Live-Feed für Cocktailbewertungen</h3>
+
+<!-- Verbindungsstatus und gespeicherte Einträge werden unabhängig angezeigt. -->
+<p role="status">{{ feedStatus }}</p>
+<p ng-if="historyError">{{ historyError }}</p>
+<p ng-if="!historyError && !ratings.length">Noch keine Bewertungen.</p>
+
+<!-- Die Bewertungs-ID identifiziert Einträge beim Zusammenführen mit der Historie. -->
+<ul>
+    <li ng-repeat="rating in ratings track by rating.id">
+        <a ng-href="#/cocktails/{{ rating.cocktailId }}">{{ rating.cocktailName }}</a>
+        – {{ rating.stars }} von 5 Sternen
+        <time ng-attr-datetime="{{ rating.createdAt }}">{{ rating.createdAt | date:'dd.MM.yyyy HH:mm:ss' }}</time>
+        <p ng-if="rating.comment">{{ rating.comment }}</p>
+    </li>
+</ul>
