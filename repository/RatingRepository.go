@@ -17,6 +17,7 @@ type Rating struct {
 	CocktailID   uint          `bson:"cocktailId" json:"cocktailId"`
 	CocktailName string        `bson:"cocktailName" json:"cocktailName"`
 	Stars        int           `bson:"stars" json:"stars"`
+	Comment      string        `bson:"comment" json:"comment"`
 	CreatedAt    time.Time     `bson:"createdAt" json:"createdAt"`
 }
 

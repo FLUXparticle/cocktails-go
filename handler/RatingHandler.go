@@ -4,7 +4,9 @@ import (
 	"context"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
+	"unicode/utf8"
 
 	"cocktails-go/repository"
 	"github.com/gin-gonic/gin"
@@ -29,11 +31,12 @@ func (h *RatingHandler) Create(c *gin.Context) {
 		return
 	}
 	var input struct {
-		Stars int `json:"stars" binding:"required,min=1,max=5"`
+		Stars   int    `json:"stars" binding:"required,min=1,max=5"`
+		Comment string `json:"comment"`
 	}
 	c.Request.Body = http.MaxBytesReader(c.Writer, c.Request.Body, 8192)
-	if err := c.ShouldBindJSON(&input); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Bitte 1 bis 5 Sterne eingeben."})
+	if err := c.ShouldBindJSON(&input); err != nil || utf8.RuneCountInString(input.Comment) > 500 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Bitte 1 bis 5 Sterne und höchstens 500 Zeichen eingeben."})
 		return
 	}
 
@@ -44,7 +47,7 @@ func (h *RatingHandler) Create(c *gin.Context) {
 	}
 	rating := repository.Rating{
 		CocktailID: uint(id), CocktailName: cocktails[0].Name,
-		Stars: input.Stars,
+		Stars: input.Stars, Comment: strings.TrimSpace(input.Comment),
 	}
 	if err := h.ratings.Insert(c.Request.Context(), &rating); err != nil {
 		c.Error(err)
